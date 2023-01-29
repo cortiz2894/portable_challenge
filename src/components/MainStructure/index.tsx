@@ -58,6 +58,10 @@ const MainStructure = () => {
                         <span></span>
                         <span></span>
                     </div>
+                    <div className={styles.groupButtons}>
+                        <button className={styles.ovalButton}>Select</button>
+                        <button className={styles.ovalButton}>Start</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,7 @@
 // @use 'styles/_colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:wght@100;400&display=swap');
+// font-family: 'Patrick Hand', cursive;
+
 .root {
     position: relative;
     border: 1px solid #cdcdcd;
@@ -203,5 +206,45 @@
             border-radius: 50%;
             background: black;
         }
+    }
+}
+
+.groupButtons {
+    transform: scaleX(-1);
+    display: flex;
+    margin-top: 20px;
+    padding-left: 12px;
+    
+    .ovalButton {
+        font-size: 7.5px;
+        
+        &:nth-of-type(1) {
+            margin-right: 13px;
+        }
+    }
+}
+
+.ovalButton {
+    border-radius: 47%;
+    text-transform: uppercase;
+    width: 36px;
+    height: 19px;
+    letter-spacing: -0.5px;
+    background: #1c1d1e;
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+    color: #c1c4c4;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 20px;
+        border: 1px solid rgb(255 255 255 / 33%);
+        border-radius: 47%;
+        top: -0.5px;
+        left: -5px;
     }
 }
