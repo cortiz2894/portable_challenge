@@ -12,6 +12,7 @@ const MainStructure = () => {
         <div className={cn(styles.root)}>
             <img className={styles.referenceImage} src='./psvita_reference.png' alt='imagen de referencia'/>
             <div className={styles.background}>
+                <img src={'./sony-logo.png'} className={styles.sonyLogo} />
                 <div className={styles.leftStick}>
                     <ControlShape
                         background={'#616161'}
@@ -28,9 +29,18 @@ const MainStructure = () => {
                         <span></span>
                         <span></span>
                     </div>
+                    <button className={cn(styles.ovalButton, styles.ovalPrimeButton)}>
+                        <img src={'./ps-logo.png'} className={styles.psLogo} />
+                    </button>
                 </div>
                 <Screen />
+                <img className={styles.psVitaLogo} src={'./logo.svg'} />
                 <div className={styles.rightStick}>
+                    <div className={styles.camContainer}>
+                        <div className={styles.webCam}>
+                            <div></div>
+                        </div>
+                    </div>
                     <ControlShape 
                         background={'#616161'}
                     />
