@@ -6,10 +6,17 @@ import CircleIcon from '../Icons/CircleIcon'
 import CrossIcon from '../Icons/CrossIcon'
 import TriangleIcon from '../Icons/TriangleIcon'
 import SquareIcon from '../Icons/SquareIcon'
+import Structure from './Structure'
+import StickIcon from '../Icons/StickIcon'
 
 const MainStructure = () => {
     return(
         <div className={cn(styles.root)}>
+            <div className={styles.triggers}>
+                <button></button>
+                <button></button>
+            </div>
+            <Structure strokeColor='#c7c9c9' strokeSize={8} />
             <img className={styles.referenceImage} src='./psvita_reference.png' alt='imagen de referencia'/>
             <div className={styles.background}>
                 <img src={'./sony-logo.png'} className={styles.sonyLogo} />
@@ -17,7 +24,34 @@ const MainStructure = () => {
                     <ControlShape
                         background={'#616161'}
                     />
-                    <div className={cn(styles.buttons)}>
+                    <div className={cn(styles.buttons, styles.crossButtons)}>
+                        <div className={styles.arrowBtn}>
+                            <StickIcon strokeColor='#adaeb0' strokeSize={2}/>
+                            <div className={styles.shadowElement}>
+                                <span className={styles.sparkleBtn}></span>
+                            </div>
+                        </div>
+                        <div className={styles.arrowBtn}>
+                            <StickIcon strokeColor='#adaeb0' strokeSize={2}/>
+                            <div className={styles.shadowElement}></div>
+                        </div>
+                        <div className={styles.arrowBtn}>
+                            <StickIcon strokeColor='#adaeb0' strokeSize={2}/>
+                            <div className={styles.shadowElement}>
+                                <span className={styles.sparkleBtn}></span>
+                            </div>
+                        </div>
+                        <div className={styles.arrowBtn}>
+                            <StickIcon strokeColor='#adaeb0' strokeSize={2}/>
+                            <div className={styles.shadowElement}>
+                                <span className={styles.sparkleBtn}></span>
+                            </div>
+                        </div>
+                        <div className={styles.shadowCross}>
+                        </div>
+                        <div className={styles.shadowCross}>
+                            <span className={styles.innerShadow}></span>
+                        </div>
                     </div>
                     <div className={styles.analogicContainer}>
                         <div className={styles.analogicBaseGradient}>

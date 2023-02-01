@@ -13,6 +13,13 @@
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
+
+    & > svg {
+        path {
+            -webkit-filter: drop-shadow( 0px -1px 0px #747474);
+            filter: drop-shadow( 0px -1px 0px #747474);
+        }
+    }
 }
 
 .referenceImage {
@@ -28,9 +35,6 @@
     width: 894px;
     height: 398px;
     border-radius: 177px;
-    /* Show background color */
-    background: rgb(18,18,20);
-    background: linear-gradient(315deg, rgb(18, 18, 20) 36%, rgb(71, 73, 72) 100%);
     display: flex;
     justify-content: center;
     position: relative;
@@ -42,6 +46,10 @@
     top: 73px;
     display: block;
     height: 212px;
+
+    & > svg {
+        overflow: inherit;
+    }
 }
 
 .leftStick {
@@ -253,7 +261,7 @@
     position: absolute;
     width: 21px;
     height: 21px;
-    border: 1px solid #4a4a4b;
+    border: 1px solid rgb(74 74 75 / 41%);
     right: 6px;
     top: -5px;
     border-radius: 50%;
@@ -350,4 +358,331 @@
         left: -4px;
         top: 0px;
     }
+}
+
+.triggers {
+    width: 62%;
+    position: absolute;
+    height: 36px;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        width: 120px;
+        height: 45px;
+        margin-top: 6px;
+        border: none;
+        background-color: #c4c5c7;
+        &:nth-of-type(1) {
+            border-top-left-radius: 100%;
+            transform: rotate(-7deg);
+            margin-left: -5px;
+        }
+
+        &:nth-of-type(2) {
+            border-top-right-radius: 100%;
+            transform: rotate(7deg);
+            margin-right: -5px;
+        }
+    }
+}
+
+.crossButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    box-sizing: border-box;
+}
+
+.arrowBtn {
+    position: relative;
+    width: 23px;
+    height: 30px;
+    background: #323334;
+    box-sizing: border-box;
+    z-index: 1;
+    & > svg {
+        position: absolute;
+        z-index: 2;
+        top: calc(50% - 6px);
+        width: 13px;
+    }
+    .shadowElement {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        background: rgb(18,20,21);
+        background: linear-gradient(0deg, rgba(18,20,21,1) 0%, rgba(18,20,21,0) 17%, rgba(18,20,21,0) 65%, rgba(18,20,21,1) 100%);
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 27px;
+            border-left: 1px solid rgb(255 255 255 / 59%);
+            border-radius: 50%;
+        }
+    }
+
+    &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 0 15px 14px;
+        border-color: transparent transparent transparent #323334;
+        position: absolute;
+        right: -13px;
+        top: 0px;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 30px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+    &:nth-of-type(2), &:nth-of-type(3) {
+        left: calc(50% - 11.5px);
+        position: absolute;
+    }
+    &:nth-of-type(1) {
+        & > svg {
+            left: calc(50% - 9px);
+        }
+        &:before {
+            background: #323334;
+            top: 0px;
+            left: -4px;
+        }
+        &:after {
+            right: -13px;
+            top: 0px;
+        }
+        .sparkleBtn {
+            right: 2px;
+            top: calc( 50% - 3px);
+        }
+        .shadowElement {
+            left: -5px;
+            width: 42px;
+            z-index: 1;
+            height: 107%;
+            &:after {
+                content: '';
+                position: absolute;
+                width: 25px;
+                height: 15px;
+                border-top: 1px solid rgba(255, 255, 255, 0.59);
+                border-radius: 8%;
+                left: 4px;
+                top: 0px;
+            }
+            &:before {
+                left: 0;
+                top: calc(50% - 14px);
+            }
+        }
+    }
+    &:nth-of-type(2) {
+        top: 10px;
+        transform: rotate(270deg);
+        z-index: 2;
+
+        & svg {
+            transform: rotate(180deg);
+            top: 8px;
+            left: 8px;
+        }
+        &:after {
+            left: -13px;
+            top: 0px;
+            transform: rotate(180deg);
+        }
+        &:before {
+            transform: rotate(180deg);
+            background: #323334;
+            top: 0px;
+            right: -4px;
+        }
+        .shadowElement {
+            right: -5px;
+            width: 37px;
+            z-index: 1;
+            height: 107%;
+            left: -9px;
+            &:after {
+                content: '';
+                position: absolute;
+                width: 23px;
+                height: 15px;
+                border-top: 1px solid rgba(255, 255, 255, 0.59);
+                border-radius: 8%;
+                left: 9px;
+                top: 0px;
+            }
+            &:before {
+                right: 0px;
+                transform: rotate(180deg);
+                top: calc(50% - 15px);
+            }
+        }
+    }
+    &:nth-of-type(3) {
+        bottom: 10px;
+        transform: rotate(-90deg);
+        z-index: 4;
+
+        & > svg {
+            left: 3px;
+        }
+        &:before {
+            transform: rotate(360deg);
+            background: #323334;
+            top: 0px;
+            left: -4px;
+        }
+        .sparkleBtn {
+            right: -2px;
+            top: calc(50% - 3px);
+            width: 2px;
+        }
+        .shadowElement {
+            right: -5px;
+            width: 37px;
+            z-index: 1;
+            height: 107%;
+            left: -4px;
+            background: linear-gradient(0deg, rgba(18,20,21,1) 0%, rgba(18,20,21,0) 45%, rgba(18,20,21,0) 83%, rgba(18,20,21,1) 100%);
+            
+            &:before {
+                left: -1px;
+                top: calc(50% - 14px);
+            }
+        }
+    }    
+    &:nth-of-type(4) {
+        z-index: 3;
+
+        & > svg {
+            transform: rotate(180deg);
+            left: inherit;
+            right: 3px;
+            top: 7px;
+        }
+        &:after {
+            left: -13px;
+            top: 0px;
+            transform: rotate(180deg);
+        }
+        &:before {
+            background: #323334;
+            top: 0px;
+            right: -4px;
+            transform: rotate(180deg);
+        }
+        .sparkleBtn {
+            left: -2px;
+            top: calc(50% - 3px);
+            transform: rotate(180deg);
+        }
+        .shadowElement {
+            right: -4px;
+            width: 37px;
+            z-index: 1;
+            height: 107%;
+            left: inherit;
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 23px;
+                height: 15px;
+                border-top: 1px solid rgba(255, 255, 255, 0.59);
+                border-radius: 8%;
+                left: 11px;
+                top: 0px;
+            }
+            &:before {
+                right: -1px;
+                top: calc(50% - 14px);
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.shadowCross {
+    position: absolute;
+    width: 90px;
+    height: 41px;
+    background: #030304;
+    left: calc(50%);
+    border-radius: 3px;
+    transform: translate(-50%, -49%);
+    top: 50%;
+    z-index: 0;
+    
+    &:nth-of-type(6) {
+        transform: rotate(90deg);
+        left: calc(50% - 45px);
+        top: calc(50% - 20.5px);
+    }
+    &:before {
+        content: '';
+        left: -7px;
+        height: 41px;
+        width: 20px;
+        background: #030304;
+        position: absolute;
+        border-radius: 40%;
+    }
+    
+    &:after {
+        content: '';
+        right: -7px;
+        height: 41px;
+        width: 20px;
+        background: #030304;
+        position: absolute;
+        border-radius: 40%;
+    }
+}
+
+.innerShadow {
+    position: absolute;
+    box-shadow: 0px 0px 5px 0.7px #6a6a6a;
+    z-index: 2;
+    width: 44px;
+    height: 0px;
+    left: 25px;
+    top: 50%;
+    transform: rotate(45deg);
+    box-sizing: border-box;
+    &::before {
+        content: '';
+        top: 50%;
+        transform: rotate(-90deg);
+        box-sizing: border-box;
+        width: 44px;
+        height: 0px;
+        z-index: 3;
+        left: -1px;
+        box-shadow: 0px 0px 5px 0.7px #6a6a6a;
+        position: absolute;
+    }
+}
+
+.sparkleBtn {
+    position: absolute;
+    width: 1px;
+    height: 4px;
+    border-radius: 50%;
+    border-right: 1px solid rgb(255 255 255 / 47%);
 }
