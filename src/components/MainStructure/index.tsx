@@ -16,8 +16,9 @@ const MainStructure = () => {
                 <button></button>
                 <button></button>
             </div>
-            <Structure strokeColor='#c7c9c9' strokeSize={8} />
-            <img className={styles.referenceImage} src='./psvita_reference.png' alt='imagen de referencia'/>
+            <Structure strokeColor='url(#borderVita)' strokeSize={8} />
+            <Structure strokeColor='url(#gradientInner)' strokeSize={10} />
+            {/* <img className={styles.referenceImage} src='./psvita_reference.png' alt='imagen de referencia'/> */}
             <div className={styles.background}>
                 <img src={'./sony-logo.png'} className={styles.sonyLogo} />
                 <div className={styles.leftStick}>
@@ -105,6 +106,16 @@ const MainStructure = () => {
                     <div className={styles.groupButtons}>
                         <button className={styles.ovalButton}>Select</button>
                         <button className={styles.ovalButton}>Start</button>
+                    </div>
+                </div>
+                <div className={styles.FootHoleContainer}>
+                    <div className={cn(styles.BottomHole, styles.left)}>
+                        <div className={styles.shadowBaseHole}></div>
+                        <div className={styles.whiteHolder}></div>
+                    </div>
+                    <div className={cn(styles.BottomHole, styles.right)}>
+                        <div className={styles.shadowBaseHole}></div>
+                        <div className={styles.whiteHolder}></div>
                     </div>
                 </div>
             </div>

@@ -15,11 +15,21 @@
     align-items: center;
 
     & > svg {
-        path {
-            -webkit-filter: drop-shadow( 0px -1px 0px #747474);
-            filter: drop-shadow( 0px -1px 0px #747474);
+        &:nth-of-type(1) {
+            path {
+                -webkit-filter: drop-shadow( 0px -1px 0px #747474);
+                filter: drop-shadow( 0px -1px 0px #747474);
+            }
+        }
+        &:nth-of-type(3) {
+            width: 886px !important;
+            z-index: 0;
+            path {
+                // stroke: #7e7f81
+            }
         }
     }
+
 }
 
 .referenceImage {
@@ -685,4 +695,141 @@
     height: 4px;
     border-radius: 50%;
     border-right: 1px solid rgb(255 255 255 / 47%);
+}
+
+/*Foot*/
+
+.FootHoleContainer {
+    position: absolute;
+    width: 87%;
+    height: 53px;
+    bottom: 2px;
+    box-sizing: border-box;
+}
+
+.BottomHole {
+
+    &.left {
+        float: left;
+        transform: rotate(-28deg);
+        margin-left: 34px;
+        margin-top: -3px;
+        width: 51px;
+        border-radius: 0rem 19rem 0rem 0%;
+        border-bottom-left-radius: 19rem;
+        height: 59px;
+        background: #8f9294;
+        border: none;
+
+        .shadowBaseHole {
+            transform: rotate(50deg);
+            top: -5px;
+            z-index: 1;
+            left: -197px;
+            height: 24px;
+            width: 400px;
+        }
+        &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            border-style: solid;
+            left: -30px;
+            top: -21px;
+            transform: rotate(55deg);
+            border-width: 26px 60px 10px 0;
+            border-color: transparent #8f9294 transparent transparent;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: -17px;
+            bottom: -22px;
+            transform: rotate(63deg);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 0 23px 45px;
+            border-color: transparent transparent transparent #8f9294;
+        }
+    }
+    &.right {
+            float: right;
+            transform: rotate(-72deg);
+            margin-right: 30px;
+            margin-top: -5px;
+            width: 51px;
+            border-radius: 0rem 19rem 0rem 0%;
+            border-bottom-left-radius: 19rem;
+            height: 59px;
+            background: #8f9294;
+            border: none;    
+            .shadowBaseHole {
+                transform: rotate(50deg);
+                top: -5px;
+                z-index: 1;
+                left: -197px;
+                height: 24px;
+                width: 400px;
+            }
+            &:before {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                border-style: solid;
+                left: -31px;
+                top: -21px;
+                transform: rotate(53deg);
+                border-width: 22px 57px 10px 0;
+                border-color: transparent #8f9294 transparent transparent;
+            }
+    
+            &:after {
+                content: '';
+                position: absolute;
+                right: -22px;
+                bottom: -21px;
+                transform: rotate(60deg);
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 11px 0 22px 53px;
+                border-color: transparent transparent transparent #8f9294;
+            }
+    }
+    height: 100%;
+    width: 70px;
+    box-sizing: border-box;
+}
+
+.shadowBaseHole { 
+    position: absolute;
+    background: linear-gradient(180deg, rgb(48, 48, 48) 36%, rgba(242, 245, 250, 0) 85%);
+    clip-path: ellipse(13% 47% at 57% 50%);
+}
+
+.whiteHolder {
+    position: absolute;
+    width: 59px;
+    height: 6px;
+    left: -1px;
+    top: 20px;
+    transform: rotate(229deg);
+    z-index: 1;
+
+    &:after {
+        content: "";
+        clip-path: ellipse(12% 47% at 45% 50%);
+        background: white;
+        width: 63px;
+        height: 69px;
+        position: absolute;
+        transform: rotate(90deg);
+        top: -32px;
+        left: -2px;
+    }
+
 }
